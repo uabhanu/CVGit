@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    [SerializeField] GameObject m_playerObj;
     [SerializeField] Transform m_playerPos;    
 
 	private void Start ()
@@ -19,6 +20,8 @@ public class CameraFollow : MonoBehaviour
         }
    
         transform.position = new Vector3(m_playerPos.transform.position.x , transform.position.y , m_playerPos.transform.position.z - 4f);
-        
+        transform.rotation = m_playerObj.transform.rotation;
+
+
     }
 }
